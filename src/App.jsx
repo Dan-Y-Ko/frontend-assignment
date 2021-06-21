@@ -1,7 +1,13 @@
 import {useState, useEffect} from 'react'
+import styled from 'styled-components'
 
-import logo from '../images/logo.svg';
-import useFetch from './../hooks/useFetch';
+import Logo from './ui/Logo';
+import useFetch from './hooks/useFetch';
+
+const ContainerStyled = styled.div`
+	width: 83%;
+	margin: auto;
+`
 
 const App = () => {
 	const [movies, setMovies] = useState([])
@@ -17,7 +23,9 @@ const App = () => {
 	console.log(movies);
 
 	return (
-		<img src={logo} alt="Timescale" />
+		<ContainerStyled>
+			<Logo />
+		</ContainerStyled>
 	)
 }
 
