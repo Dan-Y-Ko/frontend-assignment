@@ -74,7 +74,7 @@ const MovieDetailCard = ({ movie }) => {
   } = movie;
 
   return (
-    <MovieCardContainerStyled>
+    <MovieCardContainerStyled onClick={(e) => e.stopPropagation()}>
       <HeaderWrapperStyled>
         <TitleTextStyled>{title}</TitleTextStyled>
         <CloseIconWrapperStyled>
