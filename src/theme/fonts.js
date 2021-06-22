@@ -1,3 +1,5 @@
+export const fontFamily = ['Inter']
+
 export const fontWeights = {
     regular: 400,
     medium: 600,

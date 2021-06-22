@@ -1,8 +1,9 @@
 import colors from './colors'
-import { fontWeights, fontSizes } from './fonts'
+import { fontFamily, fontWeights, fontSizes } from './fonts'
 
 const theme = {
     colors,
+    fontFamily,
     fontWeights,
     fontSizes
 }

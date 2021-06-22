@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import useFetch from './hooks/useFetch';
 import Logo from './components/Logo';
 import Searchbar from './components/Searchbar';
+import Separator from './components/Separator';
+import MovieList from './features/movies/MovieList';
 
 const ContainerStyled = styled.div`
 	width: 83%;
@@ -14,7 +16,7 @@ const HeaderContainerStyled = styled.header`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-top: 10px;
+	margin-top: 2%;
 `
 
 const App = () => {
@@ -36,6 +38,8 @@ const App = () => {
 				<Logo />
 				<Searchbar />
 			</HeaderContainerStyled>
+			<Separator />
+			<MovieList />
 		</ContainerStyled>
 	)
 }

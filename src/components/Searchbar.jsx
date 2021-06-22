@@ -17,6 +17,9 @@ const InputStyled = styled.input`
     width: 100%;
     margin-left: 10px;
     color: ${props => props.theme.colors.text.secondary};
+    font-family: ${props => props.theme.fontFamily[0]};
+    font-weight: ${props => props.theme.fontWeights.regular};
+    font-size: ${props => props.theme.fontSizes[0]};
 
     &:focus {
         outline: none;
@@ -25,6 +28,9 @@ const InputStyled = styled.input`
     &::placeholder {
        padding-left: 20px;
        color: ${props => props.theme.colors.text.secondary};
+       font-family: ${props => props.theme.fontFamily[0]};
+       font-weight: ${props => props.theme.fontWeights.regular};
+        font-size: ${props => props.theme.fontSizes[0]};
    }
 `
 
