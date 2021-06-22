@@ -6,7 +6,7 @@ const SearchBarWrapperStyled = styled.div`
     position: relative;
     height: 5vh;
     width: 12%;
-    border: 1px solid ${props => props.theme.colors.bg.tertiary };
+    border: 1px solid ${props => props.theme.colors.bg.tertiary};
     border-radius: 2px;
     padding-left: 10px;
 `
@@ -16,6 +16,7 @@ const InputStyled = styled.input`
     height: 100%;
     width: 100%;
     margin-left: 10px;
+    color: ${props => props.theme.colors.text.secondary};
 
     &:focus {
         outline: none;
@@ -23,6 +24,7 @@ const InputStyled = styled.input`
 
     &::placeholder {
        padding-left: 20px;
+       color: ${props => props.theme.colors.text.secondary};
    }
 `
 
