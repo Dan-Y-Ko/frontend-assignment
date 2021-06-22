@@ -19,6 +19,10 @@ const HeaderContainerStyled = styled.header`
 	margin-top: 2%;
 `
 
+const BottomSpacerStyled = styled.footer`
+	margin-top: 100px;
+`
+
 const App = () => {
 	const [movies, setMovies] = useState([])
 	const {response, error} = useFetch('movie/now_playing');
@@ -39,7 +43,10 @@ const App = () => {
 				<Searchbar />
 			</HeaderContainerStyled>
 			<Separator />
-			<MovieList />
+			<MovieList movies={movies} />
+			<BottomSpacerStyled>
+				&nbsp;
+			</BottomSpacerStyled>
 		</ContainerStyled>
 	)
 }

@@ -34,15 +34,10 @@ const InputStyled = styled.input`
    }
 `
 
-const SearchIcon = () => <i class="fa fa-search"></i>
-
-const IconStyled = styled(SearchIcon)`
-`
-
 const Searchbar = () => {
     return (
         <SearchBarWrapperStyled>
-            <IconStyled></IconStyled>
+            <i class="fa fa-search"></i>
             <InputStyled placeholder="Search for a movie" />
         </SearchBarWrapperStyled>
     )
