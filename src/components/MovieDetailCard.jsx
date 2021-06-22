@@ -63,7 +63,7 @@ const RatingTextStyled = styled.div`
   font-size: ${(props) => props.theme.fontSizes[1]};
 `;
 
-const MovieDetailCard = ({ movie }) => {
+const MovieDetailCard = ({ movie, setModalVisible }) => {
   const {
     title,
     backdrop_path,
@@ -77,7 +77,7 @@ const MovieDetailCard = ({ movie }) => {
     <MovieCardContainerStyled onClick={(e) => e.stopPropagation()}>
       <HeaderWrapperStyled>
         <TitleTextStyled>{title}</TitleTextStyled>
-        <CloseIconWrapperStyled>
+        <CloseIconWrapperStyled onClick={() => setModalVisible(false)}>
           <i class="fa fa-window-close"></i>
         </CloseIconWrapperStyled>
       </HeaderWrapperStyled>

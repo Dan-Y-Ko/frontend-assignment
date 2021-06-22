@@ -53,7 +53,7 @@ const App = () => {
       />
       {modalVisible && (
         <ModalPortal setModalVisible={setModalVisible}>
-          <MovieDetailCard movie={movie} />
+          <MovieDetailCard movie={movie} setModalVisible={setModalVisible} />
         </ModalPortal>
       )}
       <BottomSpacerStyled>&nbsp;</BottomSpacerStyled>
