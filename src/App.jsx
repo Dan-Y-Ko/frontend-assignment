@@ -8,6 +8,8 @@ import Separator from "./components/Separator";
 import MovieList from "./features/movies/MovieList";
 import ModalPortal from "./components/ModalPortal";
 import MovieDetailCard from "./components/MovieDetailCard";
+import Loading from "./components/Loading";
+import Error from "./components/Error";
 
 const ContainerStyled = styled.div`
   height: 100vh;
@@ -31,7 +33,7 @@ const App = () => {
   const [movie, setMovie] = useState({});
   const [modalVisible, setModalVisible] = useState(false);
 
-  const { response, error } = useFetch("movie/now_playing");
+  const { response, loading, error } = useFetch("movie/now_playing");
 
   useEffect(() => {
     setMovies(response);
@@ -46,11 +48,15 @@ const App = () => {
         <Searchbar />
       </HeaderContainerStyled>
       <Separator />
-      <MovieList
-        movies={movies}
-        setMovie={setMovie}
-        setModalVisible={setModalVisible}
-      />
+      {loading && <Loading />}
+      {error && <Error />}
+      {!error && !loading && (
+        <MovieList
+          movies={movies}
+          setMovie={setMovie}
+          setModalVisible={setModalVisible}
+        />
+      )}
       {modalVisible && (
         <ModalPortal setModalVisible={setModalVisible}>
           <MovieDetailCard movie={movie} setModalVisible={setModalVisible} />
