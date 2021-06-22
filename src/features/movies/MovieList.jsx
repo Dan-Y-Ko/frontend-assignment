@@ -24,7 +24,7 @@ const MovieList = ({ movies }) => {
       <MovieContainer>
         {movies &&
           movies.map((movie) => {
-            return <MovieItem movies={movies} />;
+            return <MovieItem movie={movie} />;
           })}
       </MovieContainer>
     </main>
