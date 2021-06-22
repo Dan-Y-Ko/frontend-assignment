@@ -6,8 +6,11 @@ import Logo from "./components/Logo";
 import Searchbar from "./components/Searchbar";
 import Separator from "./components/Separator";
 import MovieList from "./features/movies/MovieList";
+import ModalPortal from "./components/ModalPortal";
+import MovieDetailCard from "./components/MovieDetailCard";
 
 const ContainerStyled = styled.div`
+  height: 100vh;
   width: 83%;
   margin: auto;
 `;
@@ -25,13 +28,16 @@ const BottomSpacerStyled = styled.footer`
 
 const App = () => {
   const [movies, setMovies] = useState([]);
+  const [movie, setMovie] = useState({});
+  const [modalVisible, setModalVisible] = useState(false);
+
   const { response, error } = useFetch("movie/now_playing");
 
   useEffect(() => {
     setMovies(response);
   }, [response]);
 
-  console.log(movies);
+  console.log(movie);
 
   return (
     <ContainerStyled>
@@ -40,7 +46,16 @@ const App = () => {
         <Searchbar />
       </HeaderContainerStyled>
       <Separator />
-      <MovieList movies={movies} />
+      <MovieList
+        movies={movies}
+        setMovie={setMovie}
+        setModalVisible={setModalVisible}
+      />
+      {modalVisible && (
+        <ModalPortal setModalVisible={setModalVisible}>
+          <MovieDetailCard movie={movie} />
+        </ModalPortal>
+      )}
       <BottomSpacerStyled>&nbsp;</BottomSpacerStyled>
     </ContainerStyled>
   );

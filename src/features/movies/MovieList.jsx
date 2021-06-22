@@ -17,14 +17,20 @@ const MovieContainer = styled.section`
   row-gap: 27px;
 `;
 
-const MovieList = ({ movies }) => {
+const MovieList = ({ movies, setMovie, setModalVisible }) => {
   return (
     <main>
       <TextStyled>Most Recent Movies</TextStyled>
       <MovieContainer>
         {movies &&
           movies.map((movie) => {
-            return <MovieItem movie={movie} />;
+            return (
+              <MovieItem
+                movie={movie}
+                setMovie={setMovie}
+                setModalVisible={setModalVisible}
+              />
+            );
           })}
       </MovieContainer>
     </main>
