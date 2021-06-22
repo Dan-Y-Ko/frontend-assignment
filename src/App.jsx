@@ -1,12 +1,20 @@
 import {useState, useEffect} from 'react'
 import styled from 'styled-components'
 
-import Logo from './ui/Logo';
 import useFetch from './hooks/useFetch';
+import Logo from './components/Logo';
+import Searchbar from './components/Searchbar';
 
 const ContainerStyled = styled.div`
 	width: 83%;
 	margin: auto;
+`
+
+const HeaderContainerStyled = styled.header`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 10px;
 `
 
 const App = () => {
@@ -24,7 +32,10 @@ const App = () => {
 
 	return (
 		<ContainerStyled>
-			<Logo />
+			<HeaderContainerStyled>
+				<Logo />
+				<Searchbar />
+			</HeaderContainerStyled>
 		</ContainerStyled>
 	)
 }
