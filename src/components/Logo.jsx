@@ -1,15 +1,13 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-import logo from '../images/logo.svg';
+import logo from "../images/logo.svg";
 
 const LogoStyled = styled.img`
-    height: 6vh;
-`
+  height: 6vh;
+`;
 
 const Logo = () => {
-    return (
-        <LogoStyled src={logo} alt="Timescale" />
-    )
-}
+  return <LogoStyled src={logo} alt="Timescale" />;
+};
 
-export default Logo
+export default Logo;
