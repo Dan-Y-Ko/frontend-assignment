@@ -34,11 +34,11 @@ const InputStyled = styled.input`
   }
 `;
 
-const Searchbar = () => {
+const Searchbar = ({ handleChange }) => {
   return (
     <SearchBarWrapperStyled>
-      <i class="fa fa-search"></i>
-      <InputStyled placeholder="Search for a movie" />
+      <i className="fa fa-search"></i>
+      <InputStyled placeholder="Search for a movie" onChange={handleChange} />
     </SearchBarWrapperStyled>
   );
 };

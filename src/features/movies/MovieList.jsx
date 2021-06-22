@@ -26,6 +26,7 @@ const MovieList = ({ movies, setMovie, setModalVisible }) => {
           movies.map((movie) => {
             return (
               <MovieItem
+                key={movie.id}
                 movie={movie}
                 setMovie={setMovie}
                 setModalVisible={setModalVisible}

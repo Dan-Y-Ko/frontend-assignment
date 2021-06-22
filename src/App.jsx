@@ -31,21 +31,40 @@ const BottomSpacerStyled = styled.footer`
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [movie, setMovie] = useState({});
+  const [searchResults, setSearchResults] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
 
-  const { response, loading, error } = useFetch("movie/now_playing");
+  const { fetchData, response, loading, error } = useFetch();
+
+  useEffect(() => {
+    const timer = setTimeout(async () => {
+      if (searchResults) {
+        fetchData(`search/movie/?query=${searchResults}`);
+        setMovies(response);
+      } else {
+        fetchData("movie/now_playing");
+      }
+    }, 500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchResults]);
 
   useEffect(() => {
     setMovies(response);
   }, [response]);
 
-  console.log(movie);
+  const handleChange = (e) => {
+    setSearchResults(e.target.value);
+  };
 
   return (
     <ContainerStyled>
       <HeaderContainerStyled>
         <Logo />
-        <Searchbar />
+        <Searchbar handleChange={handleChange} />
       </HeaderContainerStyled>
       <Separator />
       {loading && <Loading />}
