@@ -8,6 +8,7 @@ const MovieCardStyled = styled.div`
   border: 1px solid ${(props) => props.theme.colors.bg.secondary};
   border-radius: 8px;
   box-shadow: 1px 2px 8px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 `;
 
 const RatingBannerStyled = styled.div`

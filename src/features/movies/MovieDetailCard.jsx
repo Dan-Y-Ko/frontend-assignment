@@ -22,6 +22,7 @@ const TitleTextStyled = styled.p`
 
 const CloseIconWrapperStyled = styled.div`
   margin-right: 23px;
+  cursor: pointer;
 `;
 
 const MainContentWrapperStyled = styled.main`
