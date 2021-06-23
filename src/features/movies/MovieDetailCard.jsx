@@ -85,7 +85,7 @@ const MovieDetailCard = ({ movie, setModalVisible }) => {
       <HeaderWrapperStyled>
         <TitleTextStyled>{title}</TitleTextStyled>
         <CloseIconWrapperStyled onClick={() => setModalVisible(false)}>
-          <i class="fa fa-window-close"></i>
+          <i className="fa fa-window-close"></i>
         </CloseIconWrapperStyled>
       </HeaderWrapperStyled>
       <MainContentWrapperStyled>
