@@ -44,6 +44,8 @@ const CardFooterStyled = styled.div`
   align-items: center;
   height: 15%;
   margin-top: -4px;
+  padding: 0 25px 0 25px;
+  text-align: center;
 `;
 
 const MovieItem = ({ movie, setMovie, setModalVisible }) => {
