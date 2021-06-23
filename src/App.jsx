@@ -64,7 +64,10 @@ const App = () => {
     <ContainerStyled>
       <HeaderContainerStyled>
         <Logo />
-        <Searchbar handleChange={handleChange} />
+        <Searchbar
+          handleChange={handleChange}
+          placeholder="Search for a movie"
+        />
       </HeaderContainerStyled>
       <Separator />
       {loading && <Loading />}
