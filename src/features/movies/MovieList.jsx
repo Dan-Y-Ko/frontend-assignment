@@ -22,7 +22,7 @@ const MovieList = ({ movies, setMovie, setModalVisible }) => {
     if (!movies) return null;
 
     return movies.map((movie) => {
-      if (movie.backdrop_path === null) {
+      if (movie.poster_path === null) {
         return null;
       } else {
         return (
