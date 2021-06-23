@@ -7,7 +7,7 @@ import Searchbar from "./components/Searchbar";
 import Separator from "./components/Separator";
 import MovieList from "./features/movies/MovieList";
 import ModalPortal from "./components/ModalPortal";
-import MovieDetailCard from "./components/MovieDetailCard";
+import MovieDetailCard from "./features/movies/MovieDetailCard";
 import Loading from "./components/Loading";
 import Error from "./components/Error";
 

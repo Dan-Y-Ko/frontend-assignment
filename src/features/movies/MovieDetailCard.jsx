@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import moment from "moment";
 
 const MovieCardContainerStyled = styled.div`
   height: 50%;
@@ -73,6 +74,8 @@ const MovieDetailCard = ({ movie, setModalVisible }) => {
     vote_count,
   } = movie;
 
+  const formattedDate = moment().format("LL");
+
   return (
     <MovieCardContainerStyled onClick={(e) => e.stopPropagation()}>
       <HeaderWrapperStyled>
@@ -88,7 +91,7 @@ const MovieDetailCard = ({ movie, setModalVisible }) => {
         <TextContentWrapperStyled>
           <ReleaseDateTextStyled>
             <span style={{ fontWeight: 700 }}>Release Date:</span>{" "}
-            {release_date}
+            {formattedDate}
           </ReleaseDateTextStyled>
           <OverviewTextStyled>{overview}</OverviewTextStyled>
           <RatingTextStyled>
