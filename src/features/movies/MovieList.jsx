@@ -18,22 +18,29 @@ const MovieContainer = styled.section`
 `;
 
 const MovieList = ({ movies, setMovie, setModalVisible }) => {
+  const renderMovies = () => {
+    if (!movies) return null;
+
+    return movies.map((movie) => {
+      if (movie.backdrop_path === null) {
+        return null;
+      } else {
+        return (
+          <MovieItem
+            key={movie.id}
+            movie={movie}
+            setMovie={setMovie}
+            setModalVisible={setModalVisible}
+          />
+        );
+      }
+    });
+  };
+
   return (
     <main>
       <TextStyled>Most Recent Movies</TextStyled>
-      <MovieContainer>
-        {movies &&
-          movies.map((movie) => {
-            return (
-              <MovieItem
-                key={movie.id}
-                movie={movie}
-                setMovie={setMovie}
-                setModalVisible={setModalVisible}
-              />
-            );
-          })}
-      </MovieContainer>
+      <MovieContainer>{renderMovies()}</MovieContainer>
     </main>
   );
 };
