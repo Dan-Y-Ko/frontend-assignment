@@ -72,7 +72,7 @@ const RatingTextStyled = styled.div`
 const MovieDetailCard = ({ movie, setModalVisible }) => {
   const {
     title,
-    backdrop_path,
+    poster_path,
     release_date,
     overview,
     vote_average,
@@ -91,7 +91,8 @@ const MovieDetailCard = ({ movie, setModalVisible }) => {
       </HeaderWrapperStyled>
       <MainContentWrapperStyled>
         <ImageStyled
-          src={`${process.env.REACT_APP_API_BASE_IMAGE_URL}${backdrop_path}`}
+          src={`${process.env.REACT_APP_API_BASE_IMAGE_URL}${poster_path}`}
+          alt="poster_image"
         />
         <TextContentWrapperStyled>
           <ReleaseDateTextStyled>

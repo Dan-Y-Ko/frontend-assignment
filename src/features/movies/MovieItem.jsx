@@ -47,7 +47,7 @@ const CardFooterStyled = styled.div`
 `;
 
 const MovieItem = ({ movie, setMovie, setModalVisible }) => {
-  const { backdrop_path, title, vote_average } = movie;
+  const { poster_path, title, vote_average } = movie;
 
   const handleClick = () => {
     setMovie(movie);
@@ -58,8 +58,8 @@ const MovieItem = ({ movie, setMovie, setModalVisible }) => {
     <MovieCardStyled onClick={handleClick}>
       <RatingBannerStyled>{vote_average}</RatingBannerStyled>
       <CardImageStyled
-        src={`${process.env.REACT_APP_API_BASE_IMAGE_URL}${backdrop_path}`}
-        alt="backdrop_image"
+        src={`${process.env.REACT_APP_API_BASE_IMAGE_URL}${poster_path}`}
+        alt="poster_image"
       />
       <CardFooterStyled>{title}</CardFooterStyled>
     </MovieCardStyled>
