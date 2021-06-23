@@ -50,6 +50,10 @@ const ReleaseDateTextStyled = styled.div`
   font-size: ${(props) => props.theme.fontSizes[1]};
 `;
 
+const BoldTextStyled = styled.span`
+  font-weight: ${(props) => props.theme.fontWeights.bold};
+`;
+
 const OverviewTextStyled = styled.div`
   margin-top: 16px;
   margin-bottom: 16px;
@@ -74,7 +78,7 @@ const MovieDetailCard = ({ movie, setModalVisible }) => {
     vote_count,
   } = movie;
 
-  const formattedDate = moment().format("LL");
+  const formattedDate = moment(release_date).format("LL");
 
   return (
     <MovieCardContainerStyled onClick={(e) => e.stopPropagation()}>
@@ -90,13 +94,12 @@ const MovieDetailCard = ({ movie, setModalVisible }) => {
         />
         <TextContentWrapperStyled>
           <ReleaseDateTextStyled>
-            <span style={{ fontWeight: 700 }}>Release Date:</span>{" "}
-            {formattedDate}
+            <BoldTextStyled>Release Date:</BoldTextStyled> {formattedDate}
           </ReleaseDateTextStyled>
           <OverviewTextStyled>{overview}</OverviewTextStyled>
           <RatingTextStyled>
-            <span style={{ fontWeight: 700 }}>{vote_average}</span> / 10 (
-            {vote_count} total votes)
+            <BoldTextStyled>{vote_average}</BoldTextStyled> / 10 ({vote_count}{" "}
+            total votes)
           </RatingTextStyled>
         </TextContentWrapperStyled>
       </MainContentWrapperStyled>
