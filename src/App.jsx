@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 
 import useFetch from "./hooks/useFetch";
-import Logo from "./components/Logo";
+import Logo from "./components/Icon";
 import Searchbar from "./components/Searchbar";
 import Separator from "./components/Separator";
 import MovieList from "./features/movies/MovieList";
@@ -10,6 +10,8 @@ import ModalPortal from "./components/ModalPortal";
 import MovieDetailCard from "./features/movies/MovieDetailCard";
 import Loading from "./components/Loading";
 import Error from "./components/Error";
+import { Icon } from "./components/Icon";
+import logo from "./images/logo.svg";
 
 const ContainerStyled = styled.div`
   height: 100vh;
@@ -63,7 +65,7 @@ const App = () => {
   return (
     <ContainerStyled>
       <HeaderContainerStyled>
-        <Logo />
+        <Icon styles={{ height: "6vh" }} icon="timescale" alt="Timescale" />
         <Searchbar
           handleChange={handleChange}
           placeholder="Search for a movie"

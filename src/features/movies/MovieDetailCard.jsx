@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import moment from "moment";
 
-import closeIcon from "../../images/close-icon.svg";
+import { Icon } from "../../components/Icon";
 
 const MovieCardContainerStyled = styled.div`
   height: 50%;
@@ -88,7 +88,7 @@ const MovieDetailCard = ({ movie, setModalVisible }) => {
       <HeaderWrapperStyled>
         <TitleTextStyled>{title}</TitleTextStyled>
         <CloseIconWrapperStyled onClick={() => setModalVisible(false)}>
-          <img src={closeIcon} alt="close-icon" />
+          <Icon icon="closeIcon" alt="close-icon" />
         </CloseIconWrapperStyled>
       </HeaderWrapperStyled>
       <MainContentWrapperStyled>
