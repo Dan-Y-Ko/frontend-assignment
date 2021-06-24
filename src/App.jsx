@@ -60,6 +60,8 @@ const App = () => {
     setSearchResults(e.target.value);
   };
 
+  console.log(movies);
+
   return (
     <ContainerStyled>
       <HeaderContainerStyled>

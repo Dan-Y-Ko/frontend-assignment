@@ -21,6 +21,8 @@ const MovieList = ({ movies, setMovie, setModalVisible }) => {
   const renderMovies = () => {
     if (!movies) return null;
 
+    if (movies.length === 0) return <div>No Results</div>;
+
     return movies.map((movie) => {
       if (movie.poster_path === null) {
         return null;
