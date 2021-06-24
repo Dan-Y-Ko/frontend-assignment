@@ -9,6 +9,7 @@ import ModalPortal from "./components/ModalPortal";
 import MovieDetailCard from "./features/movies/MovieDetailCard";
 import Loading from "./components/Loading";
 import Error from "./components/Error";
+import sortByDate from "./utils/index";
 import { Icon } from "./components/Icon";
 
 const ContainerStyled = styled.div`
@@ -53,14 +54,18 @@ const App = () => {
   }, [searchResults]);
 
   useEffect(() => {
-    setMovies(response);
+    let moviesSorted;
+
+    if (response) {
+      moviesSorted = sortByDate(response);
+    }
+
+    setMovies(moviesSorted);
   }, [response]);
 
   const handleChange = (e) => {
     setSearchResults(e.target.value);
   };
-
-  console.log(movies);
 
   return (
     <ContainerStyled>
