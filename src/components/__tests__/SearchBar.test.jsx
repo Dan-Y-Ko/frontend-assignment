@@ -1,7 +1,7 @@
 import Searchbar from "../Searchbar";
 import { renderWithThemeProvider, screen, fireEvent } from "../../test-utils";
 
-describe("tests related to search bar", () => {
+describe("Searchbar component", () => {
   test("input text renders correctly", () => {
     renderWithThemeProvider(<Searchbar />);
 
